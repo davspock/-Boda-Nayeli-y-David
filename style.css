@@ -1,0 +1,320 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    line-height: 1.6;
+    color: #444; /* Gris oscuro para elegancia */
+    background-color: #fffaf0; /* Color crema/marfil suave */
+}
+
+/* --- SECCIÓN HERO (CABECERA) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Reemplaza 'anillos.jpg' con tu imagen */
+    background: url('anillos.jpg') no-repeat center center/cover;
+    color: white; /* Texto blanco sobre la imagen */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura para que el texto resalte */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.hero-content .date {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* --- ESTILOS GENERALES DE SECCIÓN --- */
+.section {
+    padding: 80px 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #8b4513; /* Un marrón elegante */
+    font-weight: 700;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN INTRO --- */
+.intro-section h3 {
+    font-style: italic;
+    font-size: 1.8rem;
+    color: #444;
+}
+
+/* --- SECCIÓN CUENTA REGRESIVA --- */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 2rem;
+    color: #8b4513;
+    font-weight: 700;
+}
+
+#countdown div {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    padding: 15px;
+    background: #f7e7d9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#countdown span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555;
+    margin-top: 5px;
+}
+
+.countdown-section {
+    /* 1. Referencia a tu imagen de fondo */
+    background-image: url('reloj.jpg'); 
+    /* Si está en carpeta 'img', sería: url('img/fondo-contador.jpg') */
+    
+    /* 2. Propiedades de control */
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Opcional: crea un efecto "parallax" genial */
+    
+    /* 3. Color de texto para que contraste con la imagen */
+    color: white; 
+    position: relative; /* Necesario para que el overlay funcione */
+    z-index: 1; /* Asegura que el contenido esté sobre el overlay */
+}
+
+/* 4. Overlay (Capa oscura para mejorar la legibilidad del texto) */
+.countdown-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fondo oscuro semitransparente (ajusta el último número (0.6) para más/menos oscuridad) */
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: -1; /* Mantiene el overlay debajo del contenido */
+}
+
+/* 5. Asegurar que los elementos internos también se vean bien */
+.countdown-section h2 {
+    color: white; /* El título ahora es blanco */
+}
+
+/* 6. Ajustar el contador para que resalte */
+#countdown div {
+    /* Quitamos el fondo claro que tenía por defecto */
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+    box-shadow: none; 
+    border: 1px solid white; /* Borde blanco para definir el cuadro */
+    color: white; /* El número principal es blanco */
+}
+
+#countdown span {
+    color: #eee; /* La palabra 'Días' es un gris muy claro */
+}
+
+/* --- GALERÍA DE FOTOS --- */
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.photo-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+/* --- BOTÓN CTA (RSVP) --- */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #8b4513; /* Marrón elegante */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #a0522d;
+    transform: translateY(-2px);
+}
+
+/* --- MAPA --- */
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    border: 5px solid #8b4513;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px; /* Altura fija para el mapa */
+    display: block;
+}
+
+.map-link {
+    color: #8b4513;
+    text-decoration: none;
+    font-style: italic;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* --- CONTACTO y FOOTER --- */
+.contact-section a, footer a {
+    color: #8b4513;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f7e7d9;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- ANIMACIÓN DE APARICIÓN AL HACER SCROLL (JS) --- */
+
+/* Clase inicial oculta */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Clase para mostrar cuando está en la vista */
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Retrasos para un efecto de aparición en cadena */
+.scroll-reveal.delay-1 { transition-delay: 0.1s; }
+.scroll-reveal.delay-2 { transition-delay: 0.2s; }
+.scroll-reveal.delay-3 { transition-delay: 0.3s; }
+.scroll-reveal.delay-4 { transition-delay: 0.4s; }
+
+/* Efecto inicial de fade-in para el header */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+.hero-content h1.fade-in { animation-delay: 0.5s; }
+.hero-content h2.fade-in { animation-delay: 1s; }
+.hero-content .date.fade-in { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 50px 3%;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    #countdown {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #countdown div {
+        min-width: 80px;
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+
+    .photo-item {
+        max-width: 90%;
+    }
+}
